@@ -1,16 +1,16 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
 
-TOKEN = "ТОКЕН_БОТА"
+TOKEN = "8139542567:AAExX0FgokW8DcmL3B0izSdBUcR0QPzB1Gg"
 
-def start(update: Update, context: CallbackContext):
-    update.message.reply_text("Привет! Я ваш Telegram-бот. Используйте /help для списка команд.")
+async def start(update: Update, context: CallbackContext):
+    await update.message.reply_text("Привет! Я ваш Telegram-бот. Используйте /help для списка команд.")
 
-def help_command(update: Update, context: CallbackContext):
-    update.message.reply_text("Доступные команды:\n/start - Запустить бота\n/help - Получить список команд")
+async def help_command(update: Update, context: CallbackContext):
+    await update.message.reply_text("Доступные команды:\n/start - Запустить бота\n/help - Получить список команд")
 
-def echo(update: Update, context: CallbackContext):
-    update.message.reply_text(update.message.text)
+async def echo(update: Update, context: CallbackContext):
+    await update.message.reply_text(update.message.text)
 
 def main():
     app = Application.builder().token(TOKEN).build()
@@ -24,9 +24,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-    
